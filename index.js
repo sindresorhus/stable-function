@@ -1,23 +1,6 @@
 'use strict';
 
-module.exports = function (count, fn) {
-	if (fn === undefined) {
-		fn = count;
-		count = 1000;
-	}
-
-	var first = fn();
-
-	for (var i = 1; i < count; i++) {
-		if (fn() !== first) {
-			return false;
-		}
-	}
-
-	return true;
-};
-
-module.exports.val = function (count, fn) {
+function stable(count, fn, val) {
 	if (fn === undefined) {
 		fn = count;
 		count = 1000;
@@ -28,11 +11,20 @@ module.exports.val = function (count, fn) {
 
 	for (var i = 1; i < count; i++) {
 		current = fn();
-
+		
 		if (current !== first) {
-			return current;
+			return val ? current : false;
 		}
+
 	}
 
-	return first;
+	return val ? first : true;
+}
+
+module.exports = function (count, fn) {
+	return stable(count, fn, false);
+};
+
+module.exports.val = function (count, fn) {
+	return stable(count, fn, true);
 };
