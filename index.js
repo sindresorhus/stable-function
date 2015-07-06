@@ -11,7 +11,7 @@ function stable(count, fn, val) {
 
 	for (var i = 1; i < count; i++) {
 		current = fn();
-		
+
 		if (current !== first) {
 			return val ? current : false;
 		}
