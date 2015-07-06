@@ -1,6 +1,6 @@
 'use strict';
 
-function stable(count, fn, val) {
+function stable(val, count, fn) {
 	if (fn === undefined) {
 		fn = count;
 		count = 1000;
@@ -21,10 +21,5 @@ function stable(count, fn, val) {
 	return val ? first : true;
 }
 
-module.exports = function (count, fn) {
-	return stable(count, fn, false);
-};
-
-module.exports.val = function (count, fn) {
-	return stable(count, fn, true);
-};
+module.exports = stable.bind(null, false);
+module.exports.val = stable.bind(null, true);
