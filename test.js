@@ -1,37 +1,28 @@
-'use strict';
-var test = require('ava');
-var fn = require('./');
+import test from 'ava';
+import fn from './';
 
-test('stableFn()', function (t) {
-	t.assert(fn(function () {
-		return true;
-	}) === true);
+test('stableFn()', t => {
+	t.true(fn(() => true));
 
-	var i = 0;
-	t.assert(fn(function () {
+	let i = 0;
+	t.false(fn(() => {
 		if (++i === 10) {
 			return 'bar';
 		}
 
 		return 'foo';
-	}) === false);
-
-	t.end();
+	}));
 });
 
-test('stableFn.val()', function (t) {
-	t.assert(fn.val(function () {
-		return true;
-	}));
+test('stableFn.val()', t => {
+	t.ok(fn.val(() => true));
 
-	var i = 0;
-	t.assert(fn.val(function () {
+	let i = 0;
+	t.is(fn.val(() => {
 		if (++i === 10) {
 			return 'bar';
 		}
 
 		return 'foo';
-	}) === 'bar');
-
-	t.end();
+	}), 'bar');
 });
