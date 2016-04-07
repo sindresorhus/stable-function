@@ -15,7 +15,7 @@ test('stableFn()', t => {
 });
 
 test('stableFn.val()', t => {
-	t.ok(fn.val(() => true));
+	t.truthy(fn.val(() => true));
 
 	let i = 0;
 	t.is(fn.val(() => {
