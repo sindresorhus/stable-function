@@ -1,25 +1,24 @@
 'use strict';
 
-function stable(val, count, fn) {
+function stable(returnValue, count, fn) {
 	if (fn === undefined) {
 		fn = count;
 		count = 1000;
 	}
 
-	var current;
-	var first = fn();
+	let currentValue;
+	const first = fn();
 
-	for (var i = 1; i < count; i++) {
-		current = fn();
+	for (let i = 0; i < count; i++) {
+		currentValue = fn();
 
-		if (current !== first) {
-			return val ? current : false;
+		if (currentValue !== first) {
+			return returnValue ? currentValue : false;
 		}
-
 	}
 
-	return val ? first : true;
+	return returnValue ? first : true;
 }
 
 module.exports = stable.bind(null, false);
-module.exports.val = stable.bind(null, true);
+module.exports.returningValue = stable.bind(null, true);
