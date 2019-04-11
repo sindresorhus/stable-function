@@ -1,11 +1,11 @@
 import test from 'ava';
-import fn from './';
+import stableFn from '.';
 
 test('stableFn()', t => {
-	t.true(fn(() => true));
+	t.true(stableFn(() => true));
 
 	let i = 0;
-	t.false(fn(() => {
+	t.false(stableFn(() => {
 		if (++i === 10) {
 			return 'bar';
 		}
@@ -15,10 +15,10 @@ test('stableFn()', t => {
 });
 
 test('stableFn.val()', t => {
-	t.truthy(fn.val(() => true));
+	t.truthy(stableFn.returningValue(() => true));
 
 	let i = 0;
-	t.is(fn.val(() => {
+	t.is(stableFn.returningValue(() => {
 		if (++i === 10) {
 			return 'bar';
 		}

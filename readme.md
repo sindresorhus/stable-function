@@ -2,28 +2,26 @@
 
 > Ensure a function is stable, meaning the same input always produces the same output
 
-Useful for stress testing functions in your unit tests to make sure their behavior are consistent.
+Useful for stress testing functions in your unit tests to make sure their behaviors are consistent.
 
 
 ## Install
 
 ```
-$ npm install --save stable-fn
+$ npm install stable-fn
 ```
 
 
 ## Usage
 
 ```js
-var stableFn = require('stable-fn');
+const stableFn = require('stable-fn');
 
-stableFn(function () {
-	return true;
-});
+stableFn(() => true);
 //=> true
 
-var i = 0;
-stableFn.val(100, function () {
+let i = 0;
+stableFn.returningValue(100, () => {
 	if (++i === 10) {
 		return 'bar';
 	}
@@ -40,13 +38,13 @@ stableFn.val(100, function () {
 
 Returns a boolean whether the output of `fn` was stable.
 
-### stableFn.val([count], fn)
+### stableFn.returningValue([count], fn)
 
 Returns the first differing output of `fn` or the first output if stable.
 
 #### count
 
-Type: `number`  
+Type: `number`
 Default: `1000`
 
 Number of times to call the `fn`.
