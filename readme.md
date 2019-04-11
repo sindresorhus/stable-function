@@ -21,7 +21,7 @@ stableFn(() => true);
 //=> true
 
 let i = 0;
-stableFn.returningValue(100, () => {
+stableFn.returnValue(100, () => {
 	if (++i === 10) {
 		return 'bar';
 	}
@@ -38,7 +38,7 @@ stableFn.returningValue(100, () => {
 
 Returns a boolean whether the output of `fn` was stable.
 
-### stableFn.returningValue([count], fn)
+### stableFn.returnValue([count], fn)
 
 Returns the first differing output of `fn` or the first output if stable.
 

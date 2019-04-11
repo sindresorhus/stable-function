@@ -1,6 +1,6 @@
 'use strict';
 
-function stable(returnValue, count, fn) {
+function stable(shouldReturnValue, count, fn) {
 	if (fn === undefined) {
 		fn = count;
 		count = 1000;
@@ -13,12 +13,12 @@ function stable(returnValue, count, fn) {
 		currentValue = fn();
 
 		if (currentValue !== first) {
-			return returnValue ? currentValue : false;
+			return shouldReturnValue ? currentValue : false;
 		}
 	}
 
-	return returnValue ? first : true;
+	return shouldReturnValue ? first : true;
 }
 
 module.exports = stable.bind(null, false);
-module.exports.returningValue = stable.bind(null, true);
+module.exports.returnValue = stable.bind(null, true);

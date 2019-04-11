@@ -6,7 +6,7 @@ expectType<boolean>(stableFn(100, () => true));
 
 let i = 0;
 expectType<'bar' | 'foo'>(
-	stableFn.returningValue(() => {
+	stableFn.returnValue(() => {
 		if (++i === 10) {
 			return 'bar';
 		}
@@ -15,7 +15,7 @@ expectType<'bar' | 'foo'>(
 	})
 );
 expectType<'bar' | 'foo'>(
-	stableFn.returningValue(100, () => {
+	stableFn.returnValue(100, () => {
 		if (++i === 10) {
 			return 'bar';
 		}

@@ -29,7 +29,7 @@ declare const stableFn: {
 	import stableFn = require('stable-fn');
 
 	let i = 0;
-	stableFn.returningValue(100, () => {
+	stableFn.returnValue(100, () => {
 		if (++i === 10) {
 			return 'bar';
 		}
@@ -39,8 +39,8 @@ declare const stableFn: {
 	//=> 'bar'
 	```
 	*/
-	returningValue<ReturnType>(fn: () => ReturnType): ReturnType;
-	returningValue<ReturnType>(count: number, fn: () => ReturnType): ReturnType;
+	returnValue<ReturnType>(fn: () => ReturnType): ReturnType;
+	returnValue<ReturnType>(count: number, fn: () => ReturnType): ReturnType;
 };
 
 export = stableFn;

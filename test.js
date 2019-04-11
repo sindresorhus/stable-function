@@ -15,10 +15,10 @@ test('stableFn()', t => {
 });
 
 test('stableFn.val()', t => {
-	t.truthy(stableFn.returningValue(() => true));
+	t.truthy(stableFn.returnValue(() => true));
 
 	let i = 0;
-	t.is(stableFn.returningValue(() => {
+	t.is(stableFn.returnValue(() => {
 		if (++i === 10) {
 			return 'bar';
 		}
