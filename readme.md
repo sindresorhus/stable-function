@@ -1,4 +1,4 @@
-# stable-fn [![Build Status](https://travis-ci.org/sindresorhus/stable-fn.svg?branch=master)](https://travis-ci.org/sindresorhus/stable-fn)
+# stable-fn
 
 > Ensure a function is stable, meaning the same input always produces the same output
 
