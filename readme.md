@@ -4,25 +4,23 @@
 
 Useful for stress testing functions in your unit tests to make sure their behaviors are consistent.
 
-
 ## Install
 
 ```
 $ npm install stable-fn
 ```
 
-
 ## Usage
 
 ```js
-const stableFn = require('stable-fn');
+import stableFunction from 'stable-fn';
 
-stableFn(() => true);
+stableFunction(() => true);
 //=> true
 
-let i = 0;
-stableFn.returnValue(100, () => {
-	if (++i === 10) {
+let index = 0;
+stableFunction.returnValue(100, () => {
+	if (++index === 10) {
 		return 'bar';
 	}
 
@@ -31,31 +29,25 @@ stableFn.returnValue(100, () => {
 //=> 'bar'
 ```
 
-
 ## API
 
-### stableFn([count], fn)
+### stableFunction(count?, testFunction)
 
-Returns a boolean whether the output of `fn` was stable.
+Returns a boolean whether the output of `testFunction` was stable.
 
-### stableFn.returnValue([count], fn)
+### stableFunction.returnValue(count?, testFunction)
 
-Returns the first differing output of `fn` or the first output if stable.
+Returns the first differing output of `testFunction` or the first output if stable.
 
 #### count
 
 Type: `number`
 Default: `1000`
 
-Number of times to call the `fn`.
+Number of times to call the `testFunction`.
 
-#### fn
+#### testFunction
 
 Type: `function`
 
 Function to be tested.
-
-
-## License
-
-MIT © [Sindre Sorhus](http://sindresorhus.com)

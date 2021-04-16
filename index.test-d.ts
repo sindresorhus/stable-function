@@ -1,13 +1,13 @@
 import {expectType} from 'tsd';
-import stableFn = require('.');
+import stableFunction from './index.js';
 
-expectType<boolean>(stableFn(() => true));
-expectType<boolean>(stableFn(100, () => true));
+expectType<boolean>(stableFunction(() => true));
+expectType<boolean>(stableFunction(100, () => true));
 
-let i = 0;
+let index = 0;
 expectType<'bar' | 'foo'>(
-	stableFn.returnValue(() => {
-		if (++i === 10) {
+	stableFunction.returnValue(() => {
+		if (++index === 10) {
 			return 'bar';
 		}
 
@@ -15,8 +15,8 @@ expectType<'bar' | 'foo'>(
 	})
 );
 expectType<'bar' | 'foo'>(
-	stableFn.returnValue(100, () => {
-		if (++i === 10) {
+	stableFunction.returnValue(100, () => {
+		if (++index === 10) {
 			return 'bar';
 		}
 

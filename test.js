@@ -1,12 +1,12 @@
 import test from 'ava';
-import stableFn from '.';
+import stableFunction from './index.js';
 
-test('stableFn()', t => {
-	t.true(stableFn(() => true));
+test('stableFunction()', t => {
+	t.true(stableFunction(() => true));
 
-	let i = 0;
-	t.false(stableFn(() => {
-		if (++i === 10) {
+	let index = 0;
+	t.false(stableFunction(() => {
+		if (++index === 10) {
 			return 'bar';
 		}
 
@@ -14,12 +14,12 @@ test('stableFn()', t => {
 	}));
 });
 
-test('stableFn.val()', t => {
-	t.truthy(stableFn.returnValue(() => true));
+test('stableFunction.returnValue()', t => {
+	t.truthy(stableFunction.returnValue(() => true));
 
-	let i = 0;
-	t.is(stableFn.returnValue(() => {
-		if (++i === 10) {
+	let index = 0;
+	t.is(stableFunction.returnValue(() => {
+		if (++index === 10) {
 			return 'bar';
 		}
 

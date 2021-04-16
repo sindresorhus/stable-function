@@ -1,16 +1,14 @@
-'use strict';
-
-function stable(shouldReturnValue, count, fn) {
-	if (fn === undefined) {
-		fn = count;
+function internal(shouldReturnValue, count, testFunction) {
+	if (testFunction === undefined) {
+		testFunction = count;
 		count = 1000;
 	}
 
 	let currentValue;
-	const first = fn();
+	const first = testFunction();
 
-	for (let i = 0; i < count; i++) {
-		currentValue = fn();
+	for (let index = 0; index < count; index++) {
+		currentValue = testFunction();
 
 		if (currentValue !== first) {
 			return shouldReturnValue ? currentValue : false;
@@ -20,5 +18,7 @@ function stable(shouldReturnValue, count, fn) {
 	return shouldReturnValue ? first : true;
 }
 
-module.exports = stable.bind(null, false);
-module.exports.returnValue = stable.bind(null, true);
+const stableFunction = internal.bind(null, false);
+stableFunction.returnValue = internal.bind(null, true);
+
+export default stableFunction;
