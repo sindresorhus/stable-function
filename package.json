@@ -1,6 +1,6 @@
 {
 	"name": "stable-function",
-	"version": "3.0.0",
+	"version": "4.0.0",
 	"description": "Ensure a function is stable, meaning the same input always produces the same output",
 	"license": "MIT",
 	"repository": "sindresorhus/stable-function",
