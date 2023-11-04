@@ -1,9 +1,9 @@
 {
-	"name": "stable-fn",
+	"name": "stable-function",
 	"version": "3.0.0",
 	"description": "Ensure a function is stable, meaning the same input always produces the same output",
 	"license": "MIT",
-	"repository": "sindresorhus/stable-fn",
+	"repository": "sindresorhus/stable-function",
 	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",

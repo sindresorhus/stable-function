@@ -8,7 +8,7 @@ declare const stableFunction: {
 
 	@example
 	```
-	import stableFunction from 'stable-fn';
+	import stableFunction from 'stable-function';
 
 	stableFunction(() => true);
 	//=> true
@@ -26,7 +26,7 @@ declare const stableFunction: {
 
 	@example
 	```
-	import stableFunction from 'stable-fn';
+	import stableFunction from 'stable-function';
 
 	let index = 0;
 	stableFunction.returnValue(100, () => {

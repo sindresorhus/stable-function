@@ -1,4 +1,4 @@
-# stable-fn
+# stable-function
 
 > Ensure a function is stable, meaning the same input always produces the same output
 
@@ -7,13 +7,13 @@ Useful for stress testing functions in your unit tests to make sure their behavi
 ## Install
 
 ```sh
-npm install stable-fn
+npm install stable-function
 ```
 
 ## Usage
 
 ```js
-import stableFunction from 'stable-fn';
+import stableFunction from 'stable-function';
 
 stableFunction(() => true);
 //=> true
