@@ -2,8 +2,8 @@ declare const stableFunction: {
 	/**
 	Ensure a function is stable, meaning the same input always produces the same output.
 
-	@param count - Number of times to call the `testFunction`. Default: `1000`.
-	@param testFunction - Function to be tested.
+	@param count - The number of times to call the `testFunction`. Default: `1000`.
+	@param testFunction - The function to be tested.
 	@returns Whether the output of `testFunction` was stable.
 
 	@example
@@ -20,8 +20,8 @@ declare const stableFunction: {
 	/**
 	Ensure a function is stable, meaning the same input always produces the same output.
 
-	@param count - Number of times to call the `testFunction`. Default: `1000`.
-	@param testFunction - Function to be tested.
+	@param count - The number of times to call the `testFunction`. Default: `1000`.
+	@param testFunction - The function to be tested.
 	@returns Returns the first differing output of `testFunction` or the first output if stable.
 
 	@example

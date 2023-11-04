@@ -6,8 +6,8 @@ Useful for stress testing functions in your unit tests to make sure their behavi
 
 ## Install
 
-```
-$ npm install stable-fn
+```sh
+npm install stable-fn
 ```
 
 ## Usage
@@ -44,10 +44,10 @@ Returns the first differing output of `testFunction` or the first output if stab
 Type: `number`
 Default: `1000`
 
-Number of times to call the `testFunction`.
+The number of times to call the `testFunction`.
 
 #### testFunction
 
 Type: `function`
 
-Function to be tested.
+The function to be tested.

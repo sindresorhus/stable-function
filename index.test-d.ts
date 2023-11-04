@@ -12,7 +12,7 @@ expectType<'bar' | 'foo'>(
 		}
 
 		return 'foo';
-	})
+	}),
 );
 expectType<'bar' | 'foo'>(
 	stableFunction.returnValue(100, () => {
@@ -21,5 +21,5 @@ expectType<'bar' | 'foo'>(
 		}
 
 		return 'foo';
-	})
+	}),
 );
